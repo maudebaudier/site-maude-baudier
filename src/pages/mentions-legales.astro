@@ -1,0 +1,85 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import site from "../data/site.json";
+const { footer } = site;
+---
+
+<Base title="Mentions légales — Maude Baudier" description="Mentions légales du site de Maude Baudier.">
+  <a id="top"></a>
+  <Header />
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <h1 class="legal__title">Mentions légales</h1>
+
+      <section>
+        <h2>Éditeur du site</h2>
+        <p>
+          Le présent site est édité par <strong>Maude Baudier</strong>.<br />
+          Contact : <a href={`mailto:${footer.email}`}>{footer.email}</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Directrice de la publication</h2>
+        <p>Maude Baudier.</p>
+      </section>
+
+      <section>
+        <h2>Hébergement</h2>
+        <p>
+          Le site est hébergé par <strong>Netlify, Inc.</strong><br />
+          512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis —
+          <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">www.netlify.com</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Propriété intellectuelle</h2>
+        <p>
+          L'ensemble des contenus présents sur ce site (textes, images, logos, éléments graphiques)
+          est, sauf mention contraire, la propriété de Maude Baudier ou de ses partenaires.
+          Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation
+          écrite préalable est interdite.
+        </p>
+      </section>
+
+      <section>
+        <h2>Données personnelles</h2>
+        <p>
+          Les informations transmises via le formulaire de contact sont utilisées uniquement pour
+          répondre à votre demande et ne sont ni cédées ni vendues à des tiers. Conformément au
+          Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès,
+          de rectification et de suppression de vos données. Pour l'exercer, écrivez à
+          <a href={`mailto:${footer.email}`}>{footer.email}</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Cookies</h2>
+        <p>
+          Ce site ne dépose pas de cookies publicitaires ni de traceurs tiers à des fins de ciblage.
+        </p>
+      </section>
+
+      <p class="legal__back"><a href="/">← Retour à l'accueil</a></p>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .legal { padding-block: clamp(40px, 6vw, 88px); }
+  .legal__inner { max-width: 760px; }
+  .legal__title { font-size: clamp(2.2rem, 6vw, 3.4rem); margin-bottom: 12px; }
+  .legal section { margin-top: 36px; }
+  .legal h2 {
+    font-size: 1.25rem; margin-bottom: 10px;
+    font-family: var(--font-head); font-weight: 800;
+  }
+  .legal p { color: var(--muted); line-height: 1.75; margin: 0; }
+  .legal a { color: var(--accent); }
+  .legal a:hover { text-decoration: underline; }
+  .legal__back { margin-top: 48px; }
+  .legal__back a { color: var(--muted); }
+</style>
