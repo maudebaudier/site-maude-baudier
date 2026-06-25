@@ -106,7 +106,7 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
             )}
             <a
               class="btn"
-              style="background:var(--accent);color:#fff"
+              style={`background:var(--accent);color:${b.ctaText || "#fff"}`}
               href={b.cta.href}
               target={b.cta.href.startsWith("http") ? "_blank" : undefined}
               rel={b.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
