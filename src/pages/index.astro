@@ -33,9 +33,12 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
     <!-- TRUST -->
     <section class="trust section">
       <div class="container">
-        <p class="trust__title reveal">{trust.title}</p>
-        <div class="trust__logos reveal">
+        <h2 class="trust__title reveal">{trust.title}</h2>
+      </div>
+      <div class="marquee">
+        <div class="marquee__track">
           {trust.logos.map((l) => <img src={l.image} alt={l.name} class="trust__logo" />)}
+          {trust.logos.map((l) => <img src={l.image} alt="" aria-hidden="true" class="trust__logo" />)}
         </div>
       </div>
     </section>
@@ -109,7 +112,7 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
               </div>
             )}
             {b.linktree && (
-              <a class="brand__follow" href={b.linktree} target="_blank" rel="noopener noreferrer">
+              <a class="btn brand__follow" href={b.linktree} target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 8l7-4 7 4"/><path d="M5 14l7 4 7-4"/></svg>
                 Nous suivre
               </a>
@@ -190,12 +193,12 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
   .hero { padding-top: clamp(36px, 6vw, 80px); padding-bottom: clamp(24px, 4vw, 48px); }
   .hero__inner {
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: clamp(24px, 5vw, 64px);
     align-items: center;
   }
   .hero__title {
-    font-size: clamp(3rem, 9vw, 6.4rem);
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
     font-weight: 900;
     display: flex;
     flex-direction: column;
@@ -216,16 +219,17 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
 
   /* TRUST */
   .trust { padding-block: clamp(32px, 5vw, 64px); }
-  .trust__title { text-align: center; color: var(--muted-2); margin: 0 0 28px; font-weight: 600; }
-  .trust__logos {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(28px, 6vw, 72px);
-    opacity: 0.85;
+  .trust__title { text-align: center; color: #fff; margin: 0 0 40px; font-family: var(--font-head); font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.4rem); letter-spacing: -0.01em; }
+  .marquee {
+    overflow: hidden; width: 100%;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
-  .trust__logo { height: 30px; width: auto; filter: brightness(0) invert(1); opacity: 0.75; }
+  .marquee__track { display: flex; align-items: center; width: max-content; animation: marquee-slide 30s linear infinite; }
+  .marquee:hover .marquee__track { animation-play-state: paused; }
+  .trust__logo { height: 40px; width: auto; margin-right: clamp(48px, 7vw, 96px); filter: brightness(0) invert(1); opacity: 0.8; flex: none; }
+  @keyframes marquee-slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
 
   /* CONFERENCES */
   .conf__inner {
@@ -290,22 +294,18 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
   }
   .brand__photo img { width: 100%; height: 100%; object-fit: cover; }
   .brand__follow {
-    display: inline-flex; align-items: center; gap: 10px;
-    margin: 0 12px 22px 0;
-    padding: 16px 28px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    font-family: var(--font-head); font-weight: 700; font-size: 1rem;
+    background: transparent;
+    border-color: var(--line);
     color: #fff;
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    margin: 0 12px 22px 0;
   }
-  .brand__follow:hover { background: rgba(255,255,255,0.06); border-color: var(--accent); transform: translateY(-2px); }
+  .brand__follow:hover { background: rgba(255,255,255,0.06); border-color: var(--accent); }
   .brand__follow svg { width: 18px; height: 18px; }
   .brand__proof { margin: 4px 0 24px; }
   .brand__avatars { display: flex; margin-bottom: 12px; }
   .brand__avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 3px solid var(--bg); margin-left: -16px; background: var(--surface); }
   .brand__avatar:first-child { margin-left: 0; }
-  .brand__stat { font-style: italic; font-size: 0.92rem; color: var(--muted-2); margin: 0; max-width: 44ch; }
+  .brand__stat { font-style: italic; font-size: 0.78rem; color: var(--muted-2); margin: 0; max-width: 44ch; }
 
   /* CONTACT */
   .contact__inner {
