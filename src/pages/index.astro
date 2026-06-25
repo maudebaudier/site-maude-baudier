@@ -86,7 +86,7 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
     <section class="tiles">
       <div class="container tiles__grid">
         {tiles.map((t) => (
-          <div class="tile reveal" style={`--c:${t.color}`} aria-label={t.alt}></div>
+          <div class="tile reveal"><img src={t.image} alt={t.alt} loading="lazy" /></div>
         ))}
       </div>
     </section>
@@ -265,13 +265,11 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
   .tiles { padding-block: clamp(8px, 2vw, 24px); }
   .tiles__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 22px); }
   .tile {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
     border-radius: var(--radius);
-    background-color: var(--c);
-    background-image: var(--grain);
-    background-size: 180px 180px;
-    background-blend-mode: multiply;
+    overflow: hidden;
   }
+  .tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* BRANDS */
   .brand__inner {
