@@ -2,7 +2,27 @@
 import "../styles/global.css";
 import site from "../data/site.json";
 
-const { title = site.meta.title, description = site.meta.description } = Astro.props;
+const {
+  title = site.meta.title,
+  description = site.meta.description,
+  image = "/og-image.jpg",
+  type = "website",
+} = Astro.props;
+
+const siteURL = Astro.site ?? new URL(site.meta.url);
+const canonical = new URL(Astro.url.pathname, siteURL).href;
+const ogImage = new URL(image, siteURL).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.brand.name,
+  url: siteURL.href,
+  image: ogImage,
+  jobTitle: "Entrepreneuse SportTech",
+  description: site.meta.description,
+  sameAs: [site.footer.linkedin, site.footer.instagram].filter(Boolean),
+};
 ---
 
 <!doctype html>
@@ -12,11 +32,27 @@ const { title = site.meta.title, description = site.meta.description } = Astro.p
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content={site.brand.name} />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={site.brand.name} />
+    <meta property="og:locale" content="fr_FR" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={site.meta.url} />
-    <meta name="theme-color" content="#0a0a0f" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="theme-color" content="#0a1130" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,6 +60,7 @@ const { title = site.meta.title, description = site.meta.description } = Astro.p
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline></script>
   </head>
   <body>
     <slot />
