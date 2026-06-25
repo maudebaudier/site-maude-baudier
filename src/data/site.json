@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "Maude Baudier — Entrepreneuse SportTech",
+    "description": "Maude Baudier, entrepreneuse SportTech et leader de communautés sportives d'influence en Europe. Conférences, parcours, marques Les Bornées et Smatchy.",
+    "url": "https://www.maudebaudier.com"
+  },
+  "brand": {
+    "name": "Maude Baudier"
+  },
+  "nav": [
+    { "label": "Conférences", "href": "#conferences" },
+    { "label": "Parcours", "href": "#parcours" },
+    { "label": "Les Bornées", "href": "#les-bornees", "highlight": true }
+  ],
+  "hero": {
+    "titleLine1": "Entrepreneuse",
+    "titleLine2": "SportTech",
+    "subtitle": "Leader de communautés sportives d'influence en Europe.",
+    "cta": { "label": "Collaborer ensemble", "href": "#contact" },
+    "image": "/images/maude-portrait.jpg",
+    "imageAlt": "Portrait de Maude Baudier"
+  },
+  "trust": {
+    "title": "Ils me font confiance",
+    "logos": [
+      { "name": "Logo 1", "image": "/images/logos/logo-1.svg" },
+      { "name": "Logo 2", "image": "/images/logos/logo-2.svg" },
+      { "name": "Logo 3", "image": "/images/logos/logo-3.svg" },
+      { "name": "Logo 4", "image": "/images/logos/logo-4.svg" }
+    ]
+  },
+  "conferences": {
+    "id": "conferences",
+    "title": "Conférences",
+    "text": "Des prises de parole engagées et inspirantes dans les plus grands médias français pour promouvoir le sport, l'entreprenariat et les femmes.",
+    "cta": { "label": "Booker une prise de parole", "href": "#contact" },
+    "images": [
+      { "image": "/images/conference-1.jpg", "alt": "Maude Baudier en conférence" },
+      { "image": "/images/conference-2.jpg", "alt": "Intervention média de Maude Baudier" }
+    ]
+  },
+  "quote": {
+    "text": "Rêver grand est essentiel, même si ça fait peur parfois.",
+    "author": "Maude Baudier",
+    "source": "RollerCoaster.club"
+  },
+  "parcours": {
+    "id": "parcours",
+    "eyebrow": "Entrepreneuse depuis l'âme et passionnée de sport",
+    "title": "Un parcours atypique",
+    "paragraphs": [
+      "Le partenariat fait partie de ma vie depuis mes 14 ans, où je décide de créer un Skyblog dédié à mon club d'équitation et remporte la même année le 1er prix du Jury au Salon du Cheval. Quelques années plus tard, je lance ma première entreprise pendant mes études en école de commerce et apprends tout de la création de contenus.",
+      "Les bancs de l'école quittés, je rentre dans des maisons de luxe en marketing, puis en tant que Business Developer dans des startups, pour finir chasseuse de tête dans un grand groupe américain. C'est à ce moment-là que l'entrepreneuriat reprend le dessus avec la création en 2017 d'un e-commerce sportif : Print Your Race, que je revends en 2024. Suivi des Bornées en 2018 et de Smatchy en 2022.",
+      "Passionnée, doublement marathonienne, Iron(Wo)man et finisher de l'étape du Tour à trois reprises ; le sport n'est pas qu'une simple pratique santé mais un vrai leitmotiv dans mon quotidien."
+    ]
+  },
+  "tiles": [
+    { "image": "/images/tile-1.jpg", "alt": "Texture verte", "color": "#9fc4ad" },
+    { "image": "/images/tile-2.jpg", "alt": "Texture rose et rouge", "color": "#f4b8c1" },
+    { "image": "/images/tile-3.jpg", "alt": "Texture orange", "color": "#e8763a" }
+  ],
+  "brands": [
+    {
+      "id": "les-bornees",
+      "name": "Les Bornées",
+      "paragraphs": [
+        "La 1ère communauté sportive inclusive en France pour promouvoir le cyclisme et le triathlon. Née en 2018 d'une volonté : voir plus de femmes sur des vélos, le projet a évolué au fil des années.",
+        "Les Bornées, c'est aujourd'hui plus qu'un projet : c'est une marque premium qui crée des expériences et des produits pour les particuliers et pour les entreprises."
+      ],
+      "cta": { "label": "Découvrir Les Bornées", "href": "https://www.lesbornees.com" },
+      "image": "/images/les-bornees.jpg",
+      "imageAlt": "Les Bornées",
+      "accent": "#a4124a",
+      "layout": "image-left"
+    },
+    {
+      "id": "smatchy",
+      "name": "Smatchy",
+      "paragraphs": [
+        "La 1ère app pour trouver des personnes avec qui faire du sport près de chez soi, dédiée aux particuliers, aux professionnels et aux entreprises.",
+        "Matchez avec des partenaires adaptés à votre pratique, votre niveau ou votre objectif, des coachs et athlètes à proximité, des collègues après le boulot."
+      ],
+      "cta": { "label": "Découvrir l'app", "href": "#" },
+      "image": "/images/smatchy.jpg",
+      "imageAlt": "Application Smatchy",
+      "accent": "#e8763a",
+      "layout": "image-right"
+    }
+  ],
+  "contact": {
+    "id": "contact",
+    "title": "Collaborer ensemble",
+    "text": "Une conférence, un partenariat, une collaboration de marque ? Écrivez-moi, je vous réponds rapidement.",
+    "email": "maude.baudier@lesbornees.com"
+  },
+  "footer": {
+    "tagline": "Let's work together",
+    "email": "maude.baudier@lesbornees.com",
+    "linkedin": "https://www.linkedin.com/in/maudebaudier/"
+  }
+}
