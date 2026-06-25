@@ -60,9 +60,9 @@
     ]
   },
   "tiles": [
-    { "image": "/images/tile-1.jpg", "alt": "Texture verte", "color": "#9fc4ad" },
-    { "image": "/images/tile-2.jpg", "alt": "Texture rose et rouge", "color": "#f4b8c1" },
-    { "image": "/images/tile-3.jpg", "alt": "Texture orange", "color": "#e8763a" }
+    { "image": "/images/parcours-1.jpg", "alt": "Maude Baudier à vélo" },
+    { "image": "/images/parcours-2.jpg", "alt": "Maude Baudier en milieu professionnel" },
+    { "image": "/images/parcours-3.jpg", "alt": "Maude Baudier, triathlète" }
   ],
   "brands": [
     {
