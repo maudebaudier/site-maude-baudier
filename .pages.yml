@@ -1,0 +1,131 @@
+# Configuration Pages CMS (https://pagescms.org)
+# Interface d'admin gratuite et sans serveur pour éditer le contenu du site.
+# Pour l'utiliser : se connecter sur https://app.pagescms.org avec GitHub,
+# autoriser ce dépôt, puis éditer le contenu ci-dessous (les modifications
+# sont enregistrées dans src/data/site.json et le site se reconstruit tout seul).
+
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: site
+    label: Contenu du site
+    type: file
+    path: src/data/site.json
+    fields:
+      - name: meta
+        label: SEO (titre & description)
+        type: object
+        fields:
+          - { name: title, label: Titre de l'onglet, type: string }
+          - { name: description, label: Description (Google), type: text }
+          - { name: url, label: URL du site, type: string }
+
+      - name: hero
+        label: Bandeau d'accueil
+        type: object
+        fields:
+          - { name: titleLine1, label: Titre (ligne 1), type: string }
+          - { name: titleLine2, label: Titre (ligne 2), type: string }
+          - { name: subtitle, label: Sous-titre, type: text }
+          - name: cta
+            label: Bouton
+            type: object
+            fields:
+              - { name: label, label: Texte du bouton, type: string }
+              - { name: href, label: Lien, type: string }
+          - { name: image, label: Photo, type: image }
+          - { name: imageAlt, label: Texte alternatif de la photo, type: string }
+
+      - name: trust
+        label: "Section « Ils me font confiance »"
+        type: object
+        fields:
+          - { name: title, label: Titre, type: string }
+          - name: logos
+            label: Logos
+            type: list
+            fields:
+              - { name: name, label: Nom, type: string }
+              - { name: image, label: Logo, type: image }
+
+      - name: conferences
+        label: Section Conférences
+        type: object
+        fields:
+          - { name: id, label: Ancre, type: string }
+          - { name: title, label: Titre, type: string }
+          - { name: text, label: Texte, type: text }
+          - name: cta
+            label: Bouton
+            type: object
+            fields:
+              - { name: label, label: Texte du bouton, type: string }
+              - { name: href, label: Lien, type: string }
+          - name: images
+            label: Images
+            type: list
+            fields:
+              - { name: image, label: Image, type: image }
+              - { name: alt, label: Texte alternatif, type: string }
+
+      - name: quote
+        label: Citation
+        type: object
+        fields:
+          - { name: text, label: Citation, type: text }
+          - { name: author, label: Auteur, type: string }
+          - { name: source, label: Source, type: string }
+
+      - name: parcours
+        label: Section Parcours
+        type: object
+        fields:
+          - { name: id, label: Ancre, type: string }
+          - { name: eyebrow, label: Sur-titre, type: string }
+          - { name: title, label: Titre, type: string }
+          - name: paragraphs
+            label: Paragraphes
+            type: list
+            list: true
+            field: { type: text }
+
+      - name: brands
+        label: Marques (Les Bornées, Smatchy…)
+        type: list
+        fields:
+          - { name: id, label: Ancre, type: string }
+          - { name: name, label: Nom de la marque, type: string }
+          - name: paragraphs
+            label: Paragraphes
+            type: list
+            list: true
+            field: { type: text }
+          - name: cta
+            label: Bouton
+            type: object
+            fields:
+              - { name: label, label: Texte du bouton, type: string }
+              - { name: href, label: Lien, type: string }
+          - { name: image, label: Image, type: image }
+          - { name: imageAlt, label: Texte alternatif, type: string }
+          - { name: accent, label: "Couleur d'accent (hex)", type: string }
+          - { name: layout, label: "Disposition (image-left ou image-right)", type: string }
+
+      - name: contact
+        label: Section Contact
+        type: object
+        fields:
+          - { name: id, label: Ancre, type: string }
+          - { name: title, label: Titre, type: string }
+          - { name: text, label: Texte, type: text }
+          - { name: email, label: Email, type: string }
+
+      - name: footer
+        label: Pied de page
+        type: object
+        fields:
+          - { name: tagline, label: Accroche, type: string }
+          - { name: email, label: Email, type: string }
+          - { name: linkedin, label: Lien LinkedIn, type: string }
