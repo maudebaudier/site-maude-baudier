@@ -98,6 +98,16 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
           <div class="brand__text reveal">
             <h2 class="h2">{b.name}</h2>
             {b.paragraphs.map((p) => <p class="lead">{p}</p>)}
+            {(b.avatars?.length || b.stat) && (
+              <div class="brand__proof">
+                {b.avatars && b.avatars.length > 0 && (
+                  <div class="brand__avatars">
+                    {b.avatars.map((a) => <img class="brand__avatar" src={a} alt="" loading="lazy" width="52" height="52" />)}
+                  </div>
+                )}
+                {b.stat && <p class="brand__stat">{b.stat}</p>}
+              </div>
+            )}
             {b.linktree && (
               <a class="brand__follow" href={b.linktree} target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 8l7-4 7 4"/><path d="M5 14l7 4 7-4"/></svg>
@@ -281,16 +291,21 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
   .brand__photo img { width: 100%; height: 100%; object-fit: cover; }
   .brand__follow {
     display: inline-flex; align-items: center; gap: 10px;
-    margin: 0 0 22px;
-    padding: 11px 20px;
+    margin: 0 12px 22px 0;
+    padding: 16px 28px;
     border: 1px solid var(--line);
     border-radius: 999px;
-    font-family: var(--font-head); font-weight: 700; font-size: 0.95rem;
+    font-family: var(--font-head); font-weight: 700; font-size: 1rem;
     color: #fff;
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
   }
   .brand__follow:hover { background: rgba(255,255,255,0.06); border-color: var(--accent); transform: translateY(-2px); }
   .brand__follow svg { width: 18px; height: 18px; }
+  .brand__proof { margin: 4px 0 24px; }
+  .brand__avatars { display: flex; margin-bottom: 12px; }
+  .brand__avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 3px solid var(--bg); margin-left: -16px; background: var(--surface); }
+  .brand__avatar:first-child { margin-left: 0; }
+  .brand__stat { font-style: italic; font-size: 0.92rem; color: var(--muted-2); margin: 0; max-width: 44ch; }
 
   /* CONTACT */
   .contact__inner {
