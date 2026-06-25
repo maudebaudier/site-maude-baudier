@@ -26,10 +26,12 @@
   "trust": {
     "title": "Ils me font confiance",
     "logos": [
-      { "name": "Logo 1", "image": "/images/logos/logo-1.svg" },
-      { "name": "Logo 2", "image": "/images/logos/logo-2.svg" },
-      { "name": "Logo 3", "image": "/images/logos/logo-3.svg" },
-      { "name": "Logo 4", "image": "/images/logos/logo-4.svg" }
+      { "name": "Partenaire 1", "image": "/images/partner-1.png" },
+      { "name": "Partenaire 2", "image": "/images/partner-2.png" },
+      { "name": "Partenaire 3", "image": "/images/partner-3.png" },
+      { "name": "Partenaire 4", "image": "/images/partner-4.png" },
+      { "name": "Partenaire 5", "image": "/images/partner-5.png" },
+      { "name": "Partenaire 6", "image": "/images/partner-6.png" }
     ]
   },
   "conferences": {
