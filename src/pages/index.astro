@@ -4,15 +4,6 @@ import Header from "../components/Header.astro";
 import site from "../data/site.json";
 
 const { hero, trust, conferences, quote, parcours, tiles, brands, contact, footer } = site;
-
-const socialOrder = ["instagram", "tiktok", "youtube", "linkedin", "facebook"];
-const socialIcons = {
-  instagram: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg>`,
-  tiktok: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.3 1.9 3.9 4.2 4.1v2.7c-1.4.1-2.7-.3-4-1v6.1c0 3.4-2.6 5.8-5.8 5.8-3 0-5.5-2.3-5.5-5.4 0-3.2 2.7-5.6 6-5.2v2.8c-.4-.1-.9-.2-1.3-.2-1.4 0-2.5 1.1-2.5 2.5 0 1.5 1.1 2.6 2.6 2.6 1.6 0 2.8-1.2 2.8-2.9V3h3.5z"/></svg>`,
-  youtube: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.1-.4-4.6c-.2-.8-.9-1.5-1.7-1.7C19.4 5.3 12 5.3 12 5.3s-7.4 0-8.9.4c-.8.2-1.5.9-1.7 1.7C1 8.9 1 12 1 12s0 3.1.4 4.6c.2.8.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.9 1.7-1.7.4-1.5.4-4.6.4-4.6zM9.8 15V9l5.2 3-5.2 3z"/></svg>`,
-  linkedin: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg>`,
-  facebook: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.5 9.9v-7H8v-2.9h2.5V9.4c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.9H16l-.4 2.9h-2.1v7A10 10 0 0022 12z"/></svg>`,
-};
 ---
 
 <Base>
@@ -107,12 +98,11 @@ const socialIcons = {
           <div class="brand__text reveal">
             <h2 class="h2">{b.name}</h2>
             {b.paragraphs.map((p) => <p class="lead">{p}</p>)}
-            {b.socials && socialOrder.some((k) => b.socials[k]) && (
-              <div class="brand__socials">
-                {socialOrder.filter((k) => b.socials[k]).map((k) => (
-                  <a class="brand__social" href={b.socials[k]} target="_blank" rel="noopener noreferrer" aria-label={k} set:html={socialIcons[k]}></a>
-                ))}
-              </div>
+            {b.linktree && (
+              <a class="brand__follow" href={b.linktree} target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 8l7-4 7 4"/><path d="M5 14l7 4 7-4"/></svg>
+                Nous suivre
+              </a>
             )}
             <a
               class="btn"
@@ -289,17 +279,18 @@ const socialIcons = {
     background: linear-gradient(160deg, var(--navy-2), #060615);
   }
   .brand__photo img { width: 100%; height: 100%; object-fit: cover; }
-  .brand__socials { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 24px; }
-  .brand__social {
-    width: 42px; height: 42px;
-    display: grid; place-items: center;
+  .brand__follow {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin: 0 0 22px;
+    padding: 11px 20px;
     border: 1px solid var(--line);
-    border-radius: 10px;
+    border-radius: 999px;
+    font-family: var(--font-head); font-weight: 700; font-size: 0.95rem;
     color: #fff;
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
   }
-  .brand__social:hover { background: rgba(255,255,255,0.06); border-color: var(--accent); transform: translateY(-2px); }
-  .brand__social svg { width: 20px; height: 20px; display: block; }
+  .brand__follow:hover { background: rgba(255,255,255,0.06); border-color: var(--accent); transform: translateY(-2px); }
+  .brand__follow svg { width: 18px; height: 18px; }
 
   /* CONTACT */
   .contact__inner {
@@ -337,7 +328,7 @@ const socialIcons = {
   /* FOOTER */
   .footer { border-top: 1px solid var(--line); padding-block: 28px; }
   .footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  .footer__tagline { font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; margin: 0; max-width: 32ch; }
+  .footer__tagline { font-family: var(--font-head); font-weight: 700; font-size: clamp(0.85rem, 2.2vw, 1.1rem); margin: 0; white-space: nowrap; }
   .footer__linkedin { display: inline-flex; align-items: center; gap: 12px; }
   .footer__linkedin-label { font-family: var(--font-head); font-weight: 700; color: var(--muted); transition: color 0.2s ease; }
   .footer__linkedin:hover .footer__linkedin-label { color: #fff; }
