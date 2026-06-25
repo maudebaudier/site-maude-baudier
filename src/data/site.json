@@ -5,7 +5,8 @@
     "url": "https://www.maudebaudier.com"
   },
   "brand": {
-    "name": "Maude Baudier"
+    "name": "Maude Baudier",
+    "logo": "/images/logo.png"
   },
   "nav": [
     { "label": "Conférences", "href": "#conferences" },
@@ -19,7 +20,7 @@
     "titleLine2": "SportTech",
     "subtitle": "Leader de communautés sportives d'influence en Europe.",
     "cta": { "label": "Collaborer ensemble", "href": "#contact" },
-    "image": "/images/maude-portrait.jpg",
+    "image": "/images/maude-portrait.png",
     "imageAlt": "Portrait de Maude Baudier"
   },
   "trust": {
@@ -69,6 +70,14 @@
         "La 1ère communauté sportive inclusive en France pour promouvoir le cyclisme et le triathlon. Née en 2018 d'une volonté : voir plus de femmes sur des vélos, le projet a évolué au fil des années.",
         "Les Bornées, c'est aujourd'hui plus qu'un projet : c'est une marque premium qui crée des expériences et des produits pour les particuliers et pour les entreprises."
       ],
+      "stat": "+13 000 personnes à travers l'Europe qui soutiennent le projet",
+      "avatars": [
+        "/images/lesbornees-avatar-1.jpg",
+        "/images/lesbornees-avatar-2.jpg",
+        "/images/lesbornees-avatar-3.jpg",
+        "/images/lesbornees-avatar-4.jpg",
+        "/images/lesbornees-avatar-5.jpg"
+      ],
       "linktree": "https://linktr.ee/lesbornees",
       "cta": { "label": "Découvrir Les Bornées", "href": "https://www.lesbornees.com" },
       "image": "/images/les-bornees.jpg",
@@ -84,6 +93,7 @@
         "La 1ère app pour trouver des personnes avec qui faire du sport près de chez soi, dédiée aux particuliers, aux professionnels et aux entreprises.",
         "Matchez avec des partenaires adaptés à votre pratique, votre niveau ou votre objectif, des coachs et athlètes à proximité, des collègues après le boulot."
       ],
+      "stat": "+12 000 évènements créés en 2025 en France, Inde, Vietnam, Australie et bien d'autres pays.",
       "linktree": "https://linktr.ee/smatchyapp",
       "cta": { "label": "Découvrir l'app", "href": "https://smatchy.app/" },
       "image": "/images/smatchy.jpg",
@@ -101,7 +111,7 @@
   },
   "footer": {
     "tagline": "La ligne d'arrivée n'est qu'un nouveau départ.",
-    "linkedinLabel": "Suivre sur LinkedIn",
+    "linkedinLabel": "Me suivre sur LinkedIn",
     "email": "maude.baudier@lesbornees.com",
     "linkedin": "https://www.linkedin.com/in/maude-baudier"
   }
