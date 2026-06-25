@@ -4,6 +4,9 @@ import Header from "../components/Header.astro";
 import site from "../data/site.json";
 
 const { nav, brand, hero, trust, conferences, quote, parcours, tiles, brands, contact, footer } = site;
+
+const liIcon = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg>`;
+const igIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg>`;
 ---
 
 <Base>
@@ -196,7 +199,10 @@ const { nav, brand, hero, trust, conferences, quote, parcours, tiles, brands, co
         <p class="footer__phrase">{footer.tagline}</p>
         <p class="footer__heading">Suivez-moi</p>
         <div class="footer__socials">
-          <a class="footer__social" href={footer.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+          {footer.instagram && (
+            <a class="footer__social" href={footer.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" set:html={igIcon}></a>
+          )}
+          <a class="footer__social" href={footer.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" set:html={liIcon}></a>
         </div>
       </div>
     </div>
@@ -327,7 +333,7 @@ const { nav, brand, hero, trust, conferences, quote, parcours, tiles, brands, co
   .brand__avatars { display: flex; margin-bottom: 12px; }
   .brand__avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 3px solid var(--bg); margin-left: -16px; background: var(--surface); }
   .brand__avatar:first-child { margin-left: 0; }
-  .brand__stat { font-style: italic; font-size: 0.7rem; color: var(--muted-2); margin: 0; max-width: 44ch; }
+  .brand__stat { font-style: italic; font-size: 0.64rem; color: var(--muted-2); margin: 0; white-space: nowrap; }
 
   /* CONTACT */
   .contact__inner {
@@ -396,9 +402,10 @@ const { nav, brand, hero, trust, conferences, quote, parcours, tiles, brands, co
     display: grid; place-items: center;
     border: 1px solid var(--line);
     border-radius: 12px;
-    font-family: var(--font-head); font-weight: 700;
+    color: #fff;
     transition: background 0.2s ease, border-color 0.2s ease;
   }
+  .footer__social svg { width: 22px; height: 22px; display: block; }
   .footer__social:hover { background: rgba(255,255,255,0.06); border-color: var(--accent); }
   .footer__bottom { border-top: 1px solid var(--line); }
   .footer__legal {
@@ -421,6 +428,7 @@ const { nav, brand, hero, trust, conferences, quote, parcours, tiles, brands, co
     .brand__inner--reverse .brand__media { order: 0; }
     .tiles__grid { grid-template-columns: 1fr; }
     .hero__media { order: -1; }
+    .brand__stat { white-space: normal; }
   }
   @media (max-width: 520px) {
     .form__row { grid-template-columns: 1fr; }
