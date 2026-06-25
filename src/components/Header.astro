@@ -14,7 +14,7 @@ const { nav, brand } = site;
       {
         nav.map((item) =>
           item.highlight ? (
-            <a class="nav__link nav__link--btn" href={item.href}>{item.label}</a>
+            <a class={`nav__link nav__link--btn ${item.accent === "warm" ? "nav__link--warm" : ""}`} href={item.href}>{item.label}</a>
           ) : (
             <a class="nav__link" href={item.href}>{item.label}</a>
           )
@@ -77,6 +77,8 @@ const { nav, brand } = site;
     border-radius: 999px;
   }
   .nav__link--btn:hover { opacity: 1; background: #bb1656; }
+  .nav__link--warm { background: var(--accent-warm); color: #1a1208; }
+  .nav__link--warm:hover { background: #f4894e; }
 
   .burger {
     display: none;
