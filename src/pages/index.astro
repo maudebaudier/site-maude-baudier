@@ -111,19 +111,21 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
                 {b.stat && <p class="brand__stat">{b.stat}</p>}
               </div>
             )}
-            {b.linktree && (
-              <a class="btn brand__follow" href={b.linktree} target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 8l7-4 7 4"/><path d="M5 14l7 4 7-4"/></svg>
-                Nous suivre
-              </a>
-            )}
-            <a
-              class="btn"
-              style={`background:var(--accent);color:${b.ctaText || "#fff"}`}
-              href={b.cta.href}
-              target={b.cta.href.startsWith("http") ? "_blank" : undefined}
-              rel={b.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            >{b.cta.label}</a>
+            <div class="brand__actions">
+              {b.linktree && (
+                <a class="btn brand__follow" href={b.linktree} target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 8l7-4 7 4"/><path d="M5 14l7 4 7-4"/></svg>
+                  Nous suivre
+                </a>
+              )}
+              <a
+                class="btn"
+                style={`background:var(--accent);color:${b.ctaText || "#fff"}`}
+                href={b.cta.href}
+                target={b.cta.href.startsWith("http") ? "_blank" : undefined}
+                rel={b.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              >{b.cta.label}</a>
+            </div>
           </div>
         </div>
       </section>
@@ -286,11 +288,12 @@ const { hero, trust, conferences, quote, parcours, tiles, brands, contact, foote
     background: linear-gradient(160deg, var(--navy-2), #060615);
   }
   .brand__photo img { width: 100%; height: 100%; object-fit: cover; }
+  .brand__actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   .brand__follow {
     background: transparent;
     border-color: var(--line);
     color: #fff;
-    margin: 0 12px 22px 0;
+    margin: 0;
   }
   .brand__follow:hover { background: rgba(255,255,255,0.06); border-color: var(--accent); }
   .brand__follow svg { width: 18px; height: 18px; }
