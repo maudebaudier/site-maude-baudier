@@ -10,7 +10,9 @@
   "nav": [
     { "label": "Conférences", "href": "#conferences" },
     { "label": "Parcours", "href": "#parcours" },
-    { "label": "Les Bornées", "href": "#les-bornees", "highlight": true }
+    { "label": "Les Bornées", "href": "#les-bornees", "highlight": true },
+    { "label": "Smatchy", "href": "#smatchy", "highlight": true, "accent": "warm" },
+    { "label": "Contact", "href": "#contact" }
   ],
   "hero": {
     "titleLine1": "Entrepreneuse",
@@ -94,8 +96,8 @@
     "email": "maude.baudier@lesbornees.com"
   },
   "footer": {
-    "tagline": "Let's work together",
+    "tagline": "Travaillons ensemble",
     "email": "maude.baudier@lesbornees.com",
-    "linkedin": "https://www.linkedin.com/in/maudebaudier/"
+    "linkedin": "https://www.linkedin.com/in/maude-baudier"
   }
 }
