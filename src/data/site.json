@@ -69,7 +69,7 @@
         "La 1ère communauté sportive inclusive en France pour promouvoir le cyclisme et le triathlon. Née en 2018 d'une volonté : voir plus de femmes sur des vélos, le projet a évolué au fil des années.",
         "Les Bornées, c'est aujourd'hui plus qu'un projet : c'est une marque premium qui crée des expériences et des produits pour les particuliers et pour les entreprises."
       ],
-      "socials": { "instagram": "", "tiktok": "", "youtube": "", "linkedin": "", "facebook": "" },
+      "linktree": "https://linktr.ee/lesbornees",
       "cta": { "label": "Découvrir Les Bornées", "href": "https://www.lesbornees.com" },
       "image": "/images/les-bornees.jpg",
       "imageAlt": "Les Bornées",
@@ -83,7 +83,7 @@
         "La 1ère app pour trouver des personnes avec qui faire du sport près de chez soi, dédiée aux particuliers, aux professionnels et aux entreprises.",
         "Matchez avec des partenaires adaptés à votre pratique, votre niveau ou votre objectif, des coachs et athlètes à proximité, des collègues après le boulot."
       ],
-      "socials": { "instagram": "", "tiktok": "", "youtube": "", "linkedin": "", "facebook": "" },
+      "linktree": "https://linktr.ee/smatchyapp",
       "cta": { "label": "Découvrir l'app", "href": "https://smatchy.app/" },
       "image": "/images/smatchy.jpg",
       "imageAlt": "Application Smatchy",
