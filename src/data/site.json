@@ -74,6 +74,7 @@
       "image": "/images/les-bornees.jpg",
       "imageAlt": "Les Bornées",
       "accent": "#a4124a",
+      "ctaText": "#ffffff",
       "layout": "image-left"
     },
     {
@@ -87,7 +88,8 @@
       "cta": { "label": "Découvrir l'app", "href": "https://smatchy.app/" },
       "image": "/images/smatchy.jpg",
       "imageAlt": "Application Smatchy",
-      "accent": "#e8763a",
+      "accent": "#fca13b",
+      "ctaText": "#1a1208",
       "layout": "image-right"
     }
   ],
