@@ -107,19 +107,39 @@ const { nav, brand } = site;
     transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
+  /* État X de l'icône burger quand le menu est ouvert */
+  .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
   @media (max-width: 860px) {
-    .burger { display: flex; }
+    /* IMPORTANT : retirer le backdrop-filter sur mobile.
+       Un parent avec backdrop-filter casse le position:fixed de l'overlay,
+       qui se retrouve confiné au header au lieu de couvrir tout l'écran. */
+    .header {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+    .burger {
+      display: flex;
+      position: relative;
+      z-index: 110;
+    }
     .nav {
       position: fixed;
       inset: 0;
+      z-index: 100;
       flex-direction: column;
       justify-content: center;
-      gap: 28px;
-      background: rgba(8, 15, 44, 0.98);
+      align-items: center;
+      gap: 22px;
+      padding: 24px;
+      background: var(--bg);
       transform: translateX(100%);
       transition: transform 0.3s ease;
+      overflow-y: auto;
     }
     .nav.is-open { transform: none; }
-    .nav__link { font-size: 1.6rem; }
+    .nav__link { font-size: 1.4rem; }
   }
 </style>
